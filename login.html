@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="تسجيل الدخول وإنشاء حساب في منصة رفّ وقارئ.">
+  <title>رفّ وقارئ | تسجيل الدخول وحساب جديد</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="auth" class="auth-page">
+  <header class="site-header">
+    <div class="container header-inner auth-header-inner">
+      <a class="brand" href="index.html" aria-label="رفّ وقارئ - الرئيسية"><span class="brand-mark" aria-hidden="true">ر</span><span><strong>رفّ وقارئ</strong><small>Shelf &amp; Reader</small></span></a>
+      <a class="auth-home-link" href="index.html">العودة إلى تصفح الكتب <span aria-hidden="true">←</span></a>
+      <button class="theme-toggle" type="button" aria-label="تفعيل الوضع الليلي" title="تبديل الوضع"><span aria-hidden="true">☾</span></button>
+    </div>
+  </header>
+
+  <main class="container auth-wrapper">
+    <div class="auth-aside">
+      <span class="eyebrow">أهلاً بك في مجتمع القرّاء</span>
+      <h1>لكل كتاب حكاية،<br>ولكل حكاية قارئ.</h1>
+      <p>سجّل دخولك لمتابعة رفوفك، أو أنشئ حساباً وابدأ مشاركة الكتب والمعرفة.</p>
+      <div class="auth-aside-note"><span aria-hidden="true">♡</span> كتابٌ منك، حكايةٌ جديدة لقارئ آخر.</div>
+    </div>
+    <div class="auth-card">
+      <div class="auth-tabs" role="tablist" aria-label="تسجيل الدخول أو إنشاء حساب">
+        <button type="button" class="auth-tab-btn active" id="tab-login" role="tab" aria-selected="true" aria-controls="login-panel">تسجيل الدخول</button>
+        <button type="button" class="auth-tab-btn" id="tab-register" role="tab" aria-selected="false" aria-controls="register-panel">حساب جديد</button>
+      </div>
+
+      <section id="login-panel" role="tabpanel" aria-labelledby="tab-login" class="auth-panel">
+        <div class="auth-header">
+          <h2>مرحباً بعودتك!</h2>
+          <p>سجّل دخولك لمتابعة رفوفك وعروض الكتب وتبادلها مع القرّاء.</p>
+        </div>
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="login-email">البريد الإلكتروني <span class="required">*</span></label>
+            <input type="email" id="login-email" placeholder="name@domain.com" required autocomplete="username">
+            <span class="field-error hidden" role="alert">يرجى كتابة بريد إلكتروني صحيح.</span>
+          </div>
+          <div class="field field-spaced">
+            <label for="login-password">كلمة المرور <span class="required">*</span></label>
+            <input type="password" id="login-password" placeholder="أدخل كلمة المرور" required autocomplete="current-password">
+            <span class="field-error hidden" role="alert">يرجى إدخال كلمة المرور.</span>
+          </div>
+          <div class="auth-actions-row">
+            <label class="remember-me"><input type="checkbox" id="remember-me" checked><span>تذكرني على هذا الجهاز</span></label>
+          </div>
+          <button class="button button-primary auth-submit" type="submit">دخول إلى المنصة <span aria-hidden="true">←</span></button>
+        </form>
+      </section>
+
+      <section id="register-panel" role="tabpanel" aria-labelledby="tab-register" class="auth-panel hidden">
+        <div class="auth-header">
+          <h2>انضم لمجتمع القرّاء</h2>
+          <p>أنشئ حساباً وابدأ في عرض كتبك للبيع أو التبادل.</p>
+        </div>
+        <form id="register-form" novalidate>
+          <div class="field">
+            <label for="reg-name">الاسم الكامل <span class="required">*</span></label>
+            <input type="text" id="reg-name" placeholder="مثال: خديجة علي" required maxlength="80" autocomplete="name">
+            <span class="field-error hidden" role="alert">يرجى إدخال اسمك الكامل.</span>
+          </div>
+          <div class="field field-spaced">
+            <label for="reg-email">البريد الإلكتروني <span class="required">*</span></label>
+            <input type="email" id="reg-email" placeholder="name@domain.com" required maxlength="254" autocomplete="email">
+            <span class="field-error hidden" role="alert">يرجى إدخال بريد إلكتروني صحيح.</span>
+          </div>
+          <div class="field field-spaced">
+            <label for="reg-city">المدينة / المحافظة <span class="required">*</span></label>
+            <select id="reg-city" required autocomplete="address-level1">
+              <option value="">اختر مدينتك لتسهيل المقابلات</option>
+              <option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>المنصورة</option><option>أسوان</option><option>الأقصر</option><option>قنا</option><option>أخرى</option>
+            </select>
+            <span class="field-error hidden" role="alert">يرجى اختيار مدينتك.</span>
+          </div>
+          <div class="field field-spaced">
+            <label for="reg-password">كلمة المرور <span class="required">*</span></label>
+            <input type="password" id="reg-password" placeholder="على الأقل 8 خانات" required minlength="8" autocomplete="new-password">
+            <span class="field-error hidden" role="alert">كلمة المرور يجب ألا تقل عن 8 خانات.</span>
+          </div>
+          <p class="auth-storage-note">هذا النموذج نسخة تجريبية تحفظ الحساب على هذا الجهاز فقط، ولا توفر مصادقة أو مزامنة عبر الإنترنت.</p>
+          <button class="button button-primary auth-submit" type="submit">إنشاء الحساب ودخول المنصة <span aria-hidden="true">←</span></button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

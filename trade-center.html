@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="اكتشف عروض تبادل الكتب واطلب المقايضة مع قارئ آخر.">
+  <title>مركز التبادل | رفّ وقارئ</title><link rel="stylesheet" href="css/style.css"><script src="js/app.js" defer></script>
+</head>
+<body data-page="trade">
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="رفّ وقارئ - الرئيسية"><span class="brand-mark" aria-hidden="true">ر</span><span><strong>رفّ وقارئ</strong><small>Shelf &amp; Reader</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-label="فتح قائمة التنقل">☰</button>
+    <nav class="main-nav" aria-label="التنقل الرئيسي"><a href="index.html">تصفح الكتب</a><a class="active" href="trade-center.html">مركز التبادل</a><a href="add-book.html">أضف كتابك</a><a href="my-shelf.html">رفوفي</a><a class="auth-nav-link" href="login.html">تسجيل الدخول</a></nav><button class="theme-toggle" type="button" aria-label="تفعيل الوضع الليلي" title="تبديل الوضع"><span aria-hidden="true">☾</span></button>
+  </div></header>
+  <main class="container page-main">
+    <section class="trade-hero"><span class="eyebrow">كتابك مقابل حكاية أخرى</span><h1>مركز التبادل</h1><p>اعثر على كتاب جديد، وامنح كتاباً من رفّك فرصة لرحلة أخرى.</p><a class="button button-light" href="add-book.html">＋ اعرض كتاباً للتبادل</a><span class="trade-ornament" aria-hidden="true">⇄</span></section>
+    <section class="section-block trade-listings"><div class="section-heading"><div><span class="eyebrow">مقايضات المجتمع</span><h2>كتب متاحة للتبادل</h2></div><span class="listing-total" id="trade-count"></span></div><div class="books-grid" id="trade-grid" aria-live="polite"></div><div class="empty-state hidden" id="trade-empty"><span aria-hidden="true">⇄</span><h3>لا توجد عروض تبادل بعد</h3><p>كن أول من يضيف كتاباً إلى مركز التبادل.</p><a href="add-book.html" class="button button-primary">أضف كتاباً</a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-about"><a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true">ر</span><span><strong>رفّ وقارئ</strong><small>Shelf &amp; Reader</small></span></a><p>مساحة دافئة تجمع القرّاء لتدوير الكتب وتبادل المعرفة.</p></div><div><h2>روابط سريعة</h2><a href="index.html">تصفح الكتب</a><a href="add-book.html">أضف كتابك</a><a href="my-shelf.html">رفوفي</a></div><div><h2>تبادل بأمان</h2><p>ناقش حالة الكتاب وتفاصيل التسليم مع الطرف الآخر قبل الاتفاق.</p></div></div><div class="container footer-bottom"><span>© 2025 رفّ وقارئ</span><span>صُنع بحبّ للقرّاء 📚</span></div></footer>
+  <dialog class="action-dialog" id="action-dialog" aria-labelledby="dialog-title"><form method="dialog" class="dialog-close-form"><button class="icon-button" aria-label="إغلاق" value="cancel">×</button></form><div class="dialog-icon" aria-hidden="true">⇄</div><h2 id="dialog-title">اطلب التبادل</h2><p id="dialog-message">أرسل اقتراحك للبائع للتنسيق حول المقايضة.</p><label for="buyer-message">ما الكتاب الذي تعرضه؟</label><textarea id="buyer-message" rows="3" placeholder="أخبر القارئ الآخر عن الكتاب الذي ترغب في مبادلته..."></textarea><button type="button" class="button button-primary dialog-send" id="dialog-send">إرسال طلب التبادل</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="إدارة كتبك وإعلاناتك ومعاملاتك في رفّ وقارئ.">
+  <title>رفوفي | رفّ وقارئ</title><link rel="stylesheet" href="css/style.css"><script src="js/app.js" defer></script>
+</head>
+<body data-page="shelf">
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="رفّ وقارئ - الرئيسية"><span class="brand-mark" aria-hidden="true">ر</span><span><strong>رفّ وقارئ</strong><small>Shelf &amp; Reader</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-label="فتح قائمة التنقل">☰</button>
+    <nav class="main-nav" aria-label="التنقل الرئيسي"><a href="index.html">تصفح الكتب</a><a href="trade-center.html">مركز التبادل</a><a href="add-book.html">أضف كتابك</a><a class="active" href="my-shelf.html">رفوفي</a><a class="auth-nav-link" href="login.html">تسجيل الدخول</a></nav><button class="theme-toggle" type="button" aria-label="تفعيل الوضع الليلي" title="تبديل الوضع"><span aria-hidden="true">☾</span></button>
+  </div></header>
+  <main class="container page-main">
+    <div class="page-intro shelf-intro"><div><span class="eyebrow">مساحتك الخاصة</span><h1>رفّي الصغير</h1><p>تابع كتبك المعروضة وأدر إعلاناتك من مكان واحد.</p></div><a class="button button-primary" href="add-book.html">＋ أضف كتاباً جديداً</a></div>
+    <section class="stats-grid" aria-label="ملخص رفّي"><article class="stat-card"><span class="stat-icon">▤</span><span class="stat-label">إجمالي الكتب</span><strong id="stat-total">٠</strong></article><article class="stat-card"><span class="stat-icon stat-sage">✓</span><span class="stat-label">عروض نشطة</span><strong id="stat-active">٠</strong></article><article class="stat-card"><span class="stat-icon stat-ochre">⇄</span><span class="stat-label">تمت معاملتها</span><strong id="stat-completed">٠</strong></article></section>
+    <section class="section-block shelf-listings"><div class="section-heading"><div><span class="eyebrow">إعلاناتك</span><h2>الكتب على رفّي</h2></div><label class="filter-select">عرض<select id="shelf-filter"><option value="">كل الكتب</option><option value="active">عروض نشطة</option><option value="completed">تمت معاملتها</option></select></label></div><div class="shelf-table-wrap"><table class="shelf-table"><thead><tr><th scope="col">الكتاب</th><th scope="col">طريقة العرض</th><th scope="col">السعر / المطلوب</th><th scope="col">الحالة</th><th scope="col">إدارة</th></tr></thead><tbody id="shelf-book-list"></tbody></table></div><div class="shelf-cards" id="shelf-book-cards"></div><div class="empty-state hidden" id="shelf-empty"><span aria-hidden="true">▤</span><h3>رفّك ينتظر كتاباً أول</h3><p>أضف كتاباً للبيع أو التبادل لتراه هنا.</p><a href="add-book.html" class="button button-primary">أضف كتاباً</a></div></section>
+    <section class="transactions-section"><div class="section-heading"><div><span class="eyebrow">رحلتك مع المجتمع</span><h2>المعاملات والطلبات</h2></div></div><div id="requests-list"></div><div class="transaction-placeholder" id="requests-empty"><span aria-hidden="true">♡</span><div><strong>كل بداية جميلة تبدأ برسالة</strong><p>ستظهر هنا طلبات البيع والتبادل بعد بدء التواصل مع قارئ آخر.</p></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-about"><a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true">ر</span><span><strong>رفّ وقارئ</strong><small>Shelf &amp; Reader</small></span></a><p>مساحة دافئة تجمع القرّاء لتدوير الكتب وتبادل المعرفة.</p></div><div><h2>روابط سريعة</h2><a href="index.html">تصفح الكتب</a><a href="trade-center.html">مركز التبادل</a><a href="add-book.html">أضف كتابك</a></div><div><h2>تبادل بأمان</h2><p>تواصل مع القرّاء واتفق على التفاصيل بوضوح واحترام.</p></div></div><div class="container footer-bottom"><span>© 2025 رفّ وقارئ</span><span>صُنع بحبّ للقرّاء 📚</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

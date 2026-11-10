@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="أضف كتاباً إلى رفّ وقارئ للبيع أو التبادل.">
+  <title>أضف كتابك | رفّ وقارئ</title><link rel="stylesheet" href="css/style.css"><script src="js/app.js" defer></script>
+</head>
+<body data-page="add">
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="رفّ وقارئ - الرئيسية"><span class="brand-mark" aria-hidden="true">ر</span><span><strong>رفّ وقارئ</strong><small>Shelf &amp; Reader</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-label="فتح قائمة التنقل">☰</button>
+    <nav class="main-nav" aria-label="التنقل الرئيسي"><a href="index.html">تصفح الكتب</a><a href="trade-center.html">مركز التبادل</a><a class="active" href="add-book.html">أضف كتابك</a><a href="my-shelf.html">رفوفي</a><a class="auth-nav-link" href="login.html">تسجيل الدخول</a></nav><button class="theme-toggle" type="button" aria-label="تفعيل الوضع الليلي" title="تبديل الوضع"><span aria-hidden="true">☾</span></button>
+  </div></header>
+  <main class="container page-main">
+    <div class="page-intro"><span class="eyebrow">امنح كتاباً حياة جديدة</span><h1>أضف كتاباً إلى رفّك</h1><p>أخبر القرّاء عن كتابك، وأضف صوراً واضحة تساعدهم على معرفة حالته.</p></div>
+    <form class="listing-form" id="add-book-form" novalidate>
+      <fieldset class="form-section">
+        <legend><span class="step-number">١</span> صور الكتاب <span class="required-label">إلزامي</span></legend>
+        <p class="field-help">ارفع صوراً حقيقية وواضحة للكتاب، تشمل الغلاف وأي صفحات أو ملاحظات توضّح حالته. يمكنك اختيار أكثر من صورة.</p>
+        <label class="upload-zone" for="book-images" id="upload-zone"><span class="upload-icon" aria-hidden="true">↑</span><strong>اسحب الصور إلى هنا أو <span>اختر من جهازك</span></strong><small>صور JPG أو PNG أو WEBP — الحد الأقصى 8 ميجابايت للصورة</small></label>
+        <input class="sr-only file-input" type="file" id="book-images" accept="image/*" multiple required>
+        <p class="field-error hidden" id="images-error" role="alert">يرجى رفع صورة واحدة على الأقل للكتاب.</p>
+        <div class="image-previews" id="image-previews" aria-live="polite"></div>
+      </fieldset>
+      <fieldset class="form-section">
+        <legend><span class="step-number">٢</span> بيانات الكتاب</legend>
+        <div class="form-grid">
+          <div class="field"><label for="book-title">عنوان الكتاب <span class="required">*</span></label><input id="book-title" name="title" type="text" required maxlength="100" placeholder="مثال: ألف ليلة وليلة"><span class="field-error hidden">أدخل عنوان الكتاب.</span></div>
+          <div class="field"><label for="book-author">المؤلف <span class="required">*</span></label><input id="book-author" name="author" type="text" required maxlength="80" placeholder="اسم المؤلف"><span class="field-error hidden">أدخل اسم المؤلف.</span></div>
+          <div class="field"><label for="book-category">التصنيف <span class="required">*</span></label><select id="book-category" name="category" required><option value="">اختر تصنيفاً</option><option>روايات</option><option>برمجة</option><option>طب</option><option>لغات</option><option>دراسة أكاديمية</option><option>أخرى</option></select><span class="field-error hidden">اختر تصنيف الكتاب.</span></div>
+          <div class="field"><label for="book-condition">حالة الكتاب <span class="required">*</span></label><select id="book-condition" name="condition" required><option value="">اختر الحالة</option><option>جديد</option><option>شبه جديد</option><option>متوسط وبه ملاحظات</option></select><span class="field-error hidden">اختر حالة الكتاب.</span></div>
+        </div>
+        <div class="field field-spaced"><label for="book-notes">وصف سريع وملاحظات <span class="optional-label">اختياري — Optional</span></label><textarea id="book-notes" name="notes" rows="4" maxlength="500" placeholder="وصف سريع اختياري لحالة الكتاب أو وجود علامات بالقلم (اختياري)..."></textarea><small class="field-help">شارك ما تراه مهماً عن حالة الكتاب، أو اترك الحقل فارغاً.</small></div>
+      </fieldset>
+      <fieldset class="form-section">
+        <legend><span class="step-number">٣</span> طريقة العرض</legend>
+        <div class="transaction-options" role="group" aria-label="نوع المعاملة">
+          <label class="transaction-card"><input type="radio" name="transaction" value="sale" checked><span class="radio-custom"></span><span><strong>للبيع</strong><small>حدّد السعر المناسب بالجنيه المصري</small></span><span aria-hidden="true">ج.م</span></label>
+          <label class="transaction-card"><input type="radio" name="transaction" value="trade"><span class="radio-custom"></span><span><strong>للتبادل</strong><small>اعرض الكتاب للمقايضة بكتاب آخر</small></span><span aria-hidden="true">⇄</span></label>
+        </div>
+        <div class="field transaction-field" id="price-field"><label for="book-price">السعر بالجنيه المصري <span class="required">*</span></label><div class="input-suffix"><input id="book-price" name="price" type="number" min="1" step="1" placeholder="مثال: ١٢٠"><span>ج.م</span></div><span class="field-error hidden">أدخل سعراً صحيحاً أكبر من صفر.</span></div>
+        <div class="field transaction-field hidden" id="trade-field"><label for="trade-wanted">ما الكتب التي تقبلها كبديل؟ <span class="required">*</span></label><input id="trade-wanted" name="tradeWanted" type="text" maxlength="160" placeholder="مثال: روايات عربية أو كتب في علم النفس"><span class="field-error hidden">أخبر القرّاء بما تقبله كبديل.</span></div>
+      </fieldset>
+      <fieldset class="form-section">
+        <legend><span class="step-number">٤</span> الموقع والتسليم</legend>
+        <div class="form-grid">
+          <div class="field"><label for="book-city">المحافظة / المنطقة <span class="required">*</span></label><select id="book-city" name="city" required><option value="">اختر المحافظة</option><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>المنصورة</option><option>أخرى</option></select><span class="field-error hidden">اختر المحافظة أو المنطقة.</span></div>
+          <div class="field"><span class="field-label">خيارات التسليم <span class="required">*</span></span><div class="delivery-options"><label><input type="checkbox" name="delivery" value="مقابلة يداً بيد" checked> مقابلة يداً بيد</label><label><input type="checkbox" name="delivery" value="شحن"> شحن</label></div><span class="field-error hidden">اختر طريقة تسليم واحدة على الأقل.</span></div>
+        </div>
+      </fieldset>
+      <div class="form-actions"><button class="button button-primary" type="submit">نشر عرض الكتاب <span aria-hidden="true">←</span></button><button class="button button-outline" type="reset">إعادة التعيين</button><span class="form-privacy">بالنشر، توافق على التعامل باحترام ووضوح مع أفراد المجتمع.</span></div>
+    </form>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-about"><a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true">ر</span><span><strong>رفّ وقارئ</strong><small>Shelf &amp; Reader</small></span></a><p>مساحة دافئة تجمع القرّاء لتدوير الكتب وتبادل المعرفة.</p></div><div><h2>روابط سريعة</h2><a href="index.html">تصفح الكتب</a><a href="trade-center.html">مركز التبادل</a><a href="my-shelf.html">رفوفي</a></div><div><h2>تبادل بأمان</h2><p>اتفق مع القارئ الآخر على الاستلام أو الشحن قبل إتمام المعاملة.</p></div></div><div class="container footer-bottom"><span>© 2025 رفّ وقارئ</span><span>صُنع بحبّ للقرّاء 📚</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
